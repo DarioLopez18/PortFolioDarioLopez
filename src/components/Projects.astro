@@ -1,0 +1,208 @@
+---
+import Bootstrap from "./icon/bootstrap.astro";
+import Css from "./icon/css.astro";
+import Express from "./icon/express.astro";
+import Git from "./icon/git.astro";
+import Github from "./icon/github.astro";
+import HTML from "./icon/html.astro";
+import Javascript from "./icon/javascript.astro";
+import Mongo from "./icon/mongo.astro";
+import Node from "./icon/node.astro";
+import Swagger from "./icon/swagger.astro";
+import Netlify from "./icon/netlify.astro";
+import Railway from "./icon/railway.astro";
+import React from "./icon/react.astro";
+import Figma from "./icon/figma.astro";
+import IntellijIdea from "./icon/IntelliJ.astro";
+import Stripe from "./icon/stripe.astro";
+import Sass from "./icon/sass.astro";
+import ImagenBackEnd from "../img/EcommerceBackEndCoderHouse.png";
+import ImagenSabor from "../img/ElBuenSabor.png";
+import ImagenFree from "../img/Freelancer.png";
+import Coffe from "../img/cafe.png";
+import festival from "../img/Festival.png";
+
+const imagenCoder = ImagenBackEnd.src;
+const elBuenSabor = ImagenSabor.src;
+const freelancer = ImagenFree.src;
+const blogCoffe = Coffe.src;
+const FestivalImg = festival.src;
+
+const TAGS = {
+  HTML: {
+    icon: HTML,
+  },
+  JAVASCRIPT: {
+    icon: Javascript,
+  },
+  NODE: {
+    icon: Node,
+  },
+  GIT: {
+    icon: Git,
+  },
+  MONGO: {
+    icon: Mongo,
+  },
+  CSS3: {
+    icon: Css,
+  },
+  EXPRESS: {
+    icon: Express,
+  },
+  BOOTSTRAP: {
+    icon: Bootstrap,
+  },
+  SWAGGER: {
+    icon: Swagger,
+  },
+  REACT: {
+    icon: React,
+  },
+  FIGMA: {
+    icon: Figma,
+  },
+  INTELLIJ: {
+    icon: IntellijIdea,
+  },
+  STRIPE: {
+    icon: Stripe,
+  },
+  SASS: {
+    icon: Sass,
+  },
+};
+
+const HOSTING = {
+  RAILWAY: {
+    icon: Railway,
+  },
+  NETLIFY: {
+    icon: Netlify,
+  },
+  GITHUB: {
+    icon: Github,
+  },
+};
+
+const PROYECTOS = [
+  {
+    title: "Backend Ecommerce",
+    description:
+      "Proyecto del backend de una aplicacion ecommerce con el stack MERN. Realizada durante el cursado de programación backend de CoderHouse en el año 2023. La ecommerce está basada sobre productos de hardware y el mundo gamer.",
+    link: "https://ecommercebackend2023coderhouse-production-4c91.up.railway.app/",
+    github: "https://github.com/DarioLopez18/EcommerceBackend2023CoderHouse",
+    image: imagenCoder,
+    tags: [
+      TAGS.HTML,
+      TAGS.BOOTSTRAP,
+      TAGS.CSS3,
+      TAGS.EXPRESS,
+      TAGS.GIT,
+      TAGS.JAVASCRIPT,
+      TAGS.MONGO,
+      TAGS.NODE,
+      TAGS.SWAGGER,
+      TAGS.STRIPE,
+    ],
+    hosting: [HOSTING.RAILWAY],
+  },
+  {
+    title: "El Buen Sabor",
+    description:
+      "El proyecto El Buen Sabor es una ecommerce de Comida, realizada con Java y Spring Boot en la cátedra Desarrollo de Software de la carrera en Ingeniería En Sistemas de Información. Contiene vistas para clientes, cocineros, administrador, cajero, delivery,etc.",
+    link: "https://github.com/DarioLopez18/DesarrolloDeSoftware-2023-ElBuenSabor",
+    github:
+      "https://github.com/DarioLopez18/DesarrolloDeSoftware-2023-ElBuenSabor-BackEnd",
+    image: elBuenSabor,
+    tags: [
+      TAGS.JAVASCRIPT,
+      TAGS.GIT,
+      TAGS.HTML,
+      TAGS.BOOTSTRAP,
+      TAGS.REACT,
+      TAGS.FIGMA,
+      TAGS.INTELLIJ,
+    ],
+    hosting: [HOSTING.GITHUB],
+  },
+  {
+    title: "Pagina Freelancer",
+    description:
+      "Esta es mi primer página WEB Front End, se trata de una landing page como Freelancer. La Realicé siguiendo un curso de programación de Udemy. Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL",
+    link: "https://desarrolladorwebfreelancer.netlify.app/",
+    github: "https://github.com/DarioLopez18/FreelancerWeb",
+    image: freelancer,
+    tags: [TAGS.HTML, TAGS.CSS3, TAGS.GIT],
+    hosting: [HOSTING.NETLIFY],
+  },
+  {
+    title: "Blog de Cafe",
+    description:
+      "Esta es una página front-end responsive desarrollada con HTML Y CSS, para un blog de café.",
+    link: "https://blogcoofeweb.netlify.app/",
+    github: "https://github.com/DarioLopez18/BlogDeCafe",
+    image: blogCoffe,
+    tags: [TAGS.HTML, TAGS.CSS3, TAGS.GIT],
+    hosting: [HOSTING.NETLIFY],
+  },
+  {
+    title: "Music Festival",
+    description:
+      "Esta es una página front-end responsive desarrollada con HTML, SASS, GULP Y CSS, para un recital de música de rock.",
+    link: "https://festivalmusicajunio01.netlify.app/",
+    github: "https:/github.com/DarioLopez18/Music-Festival",
+    image: FestivalImg,
+    tags: [TAGS.HTML, TAGS.CSS3, TAGS.GIT, TAGS.SASS],
+    hosting: [HOSTING.NETLIFY],
+  },
+];
+---
+
+{
+  PROYECTOS.map((proyecto) => (
+    <article class="mb-14">
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+        {proyecto.title}
+      </h3>
+      <p class="text-lg mb-2 text-pretty">{proyecto.description}</p>
+      <ul class="flex gap-4 flex-row justify-between mt-4 mb-4 flex-wrap">
+        {proyecto.tags.map((tag) => (
+          <li>
+            <tag.icon class="size-8" />
+          </li>
+        ))}
+      </ul>
+      <div class="flex justify-center gap-5 lg:gap-10 mt-5 mb-5">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full border border-white/10 flex justify-center items-center gap-x-2 py-1 px-2 lg:py-2 lg:px-4 text-xs text-base bg-white/5 hover:scale-x-105 max-w-xl hover:bg-white/10 transition"
+          href={proyecto.github}
+        >
+          <Github class="size-6" />
+          Github
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full border border-white/10 flex justify-center items-center gap-x-2 py-1 px-2 lg:py-2 lg:px-4 text-xs text-base bg-white/5 hover:scale-x-105 max-w-xl hover:bg-white/10 transition"
+          href={proyecto.link}
+        >
+          {proyecto.hosting.map((hostinger) => (
+            <ul>
+              <hostinger.icon class="size-6" />
+            </ul>
+          ))}
+          Deploy
+        </a>
+      </div>
+
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={proyecto.image}
+        alt="Captura de pantalla del proyecto"
+      />
+    </article>
+  ))
+}

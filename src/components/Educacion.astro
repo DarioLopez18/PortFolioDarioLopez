@@ -1,0 +1,33 @@
+---
+import EducacionItem from "../components/EducacionItem.astro";
+const Education = [
+  {
+    date: "Marzo 2020 - Actualidad",
+    name: "Universidad Tecnológica Nacional - Facultad Regional Mendoza",
+    nivel: "Ingeniería en Sistemas de Información en Curso - 4to Año",
+    link: "https://www4.frm.utn.edu.ar/",
+  },
+  {
+    date: "Diciembre 2019",
+    name: "Escuela: Adolfo Perez Esquivel 4-128",
+    nivel: "Secundario Completo - Bachiller en Economía y administración",
+    link: "https://escuela-adolfoperezesquivel.edu.ar/",
+  },
+  {
+    date: "Diciembre 2014",
+    name: "Escuela: Juan Martinez de Rosas 1-109",
+    nivel: "Primario Completoa",
+    link: "https://jmrosas.blogspot.com/",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-2">
+  {
+    Education.map((educacion) => (
+      <li class="mb-10 ms-4">
+        <EducacionItem {...educacion} />
+      </li>
+    ))
+  }
+</ol>
